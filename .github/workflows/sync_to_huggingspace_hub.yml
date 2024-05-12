@@ -17,7 +17,11 @@ jobs:
       - name: LFS Install
         run: git lfs install
       - name: LFS Track
-        run: git lfs track Bhagavad-Gita-As-It-Is.pdf
+        run: git lfs "*.pdf"
+      - name: Large files
+        run: huggingface-cli lfs-enable-largefiles
+      - name: Add gitatt
+        run: git add .gitattributes
       - name: Checkout LFS objects
         run: git lfs checkout
       - name: Push to hub
