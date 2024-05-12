@@ -18,8 +18,6 @@ jobs:
         run: git lfs install
       - name: LFS Track
         run: git lfs track "*.pdf"
-      - name: Large files
-        run: huggingface-cli lfs-enable-largefiles
       - name: Add gitatt
         run: git add .gitattributes
       - name: Checkout LFS objects
